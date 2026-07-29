@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+.venv/
+*.db
+.env
+storage/cards/
+storage/images/
+storage/videos/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+web/.next/
+web/node_modules/
+.next/
+node_modules/
+
+# Runtime storage (generated content)
+storage/audio/
+storage/slides/
+storage/frames/
+storage/segment_videos/
+storage/subtitles/
+storage/uploads/
+storage/fernet_key
+storage/.fernet_key
