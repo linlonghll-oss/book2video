@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy[asyncio]
+aiosqlite
+pydantic
+pydantic-settings
+python-dotenv
+httpx
+openai
+pillow
+edge-tts
+opencv-python-headless
+python-pptx
+python-multipart
+aiofiles
+cryptography
