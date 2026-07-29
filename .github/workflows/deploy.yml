@@ -76,9 +76,23 @@ jobs:
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
-    if: ${{ secrets.SERVER_HOST != '' }}
 
     steps:
+      - name: Check deployment config
+        id: check
+        run: |
+          if [ -n "$SERVER_HOST" ]; then
+            echo "skip=false" >> $GITHUB_OUTPUT
+          else
+            echo "Server secrets not configured, skipping deployment"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          fi
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+
+      - name: Deploy to server
+        if: steps.check.outputs.skip != 'true'
+
       - name: Deploy to server
         uses: appleboy/ssh-action@v1.2.2
         with:
