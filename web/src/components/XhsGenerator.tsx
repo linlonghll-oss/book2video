@@ -86,7 +86,7 @@ export default function XhsGenerator({ initialTitle = "", initialContent = "", o
   const [generating, setGenerating] = useState(false);
   const [result, setResult] = useState<GenerateResult | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [progressMsg, setProgressMsg] = useState("");
+  const [, setProgressMsg] = useState("");
 
   // ── Data fetching ──
   const { data: modelsData } = useSWR("/xhs/models", fetcher, {
